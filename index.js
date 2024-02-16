@@ -4,6 +4,7 @@ import connectUserDB from "./config/Db.js";
 import createItem from "./routes/create.js";
 import readitems from "./routes/Read.js";
 import deleteItems from "./routes/delete.js";
+import readByIditems from "./routes/readById.js";
 //Encoding
 const app = express();
 app.use(express.urlencoded({ extended: false }));
@@ -15,6 +16,7 @@ connectUserDB();
 app.use("/", createItem);
 app.use("/", readitems);
 app.use("/", deleteItems);
+app.use("/", readByIditems);
 
 //Created an express server
 const PORT = 3000 || process.env.DEV_PORT || process.env.PROD_PORT;
